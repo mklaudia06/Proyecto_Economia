@@ -1,0 +1,594 @@
+[
+    {
+        "name": "Bodegón de Calzada",
+        "town": "Plaza de la Revolución",
+        "location": {
+            "street": "Calzada / Paseo & A",
+            "coordinates": {
+                "latitude": 23.137886472972525,
+                "longitude": -82.39905099268489
+            }
+        },
+        "products": [
+            {
+                "name":"Arroz Blanco",
+                "price":680.0,
+                "weight_kg": 1.0
+            }
+        ],
+        "currency": "CUP"
+    },
+    {
+        "name": "Mi Mercadito, Llegando",
+        "town": "Plaza de la Revolución",
+        "location": {
+            "street": "Calle 5ta / E & F",
+            "coordinates": {
+                "latitude": 23.142513466690126,
+                "longitude": -82.39636878359543
+            }
+        },
+        "products":[
+            {
+                "name":"Arroz Super Extra",
+                "price":580.0,
+                "weight_kg": 1.0
+            }   
+        ],
+        "currency":"CUP"
+    },
+    {
+        "name": "El Rey, SRL",
+        "town": "Plaza de la Revolución",
+        "location": {
+            "street": "Calle F / 3ra y 5ta, Edif. 53, Vedado",
+            "coordinates": {
+                "latitude": 23.143549338937667,
+                "longitude": -82.39613274924378
+            }
+        },
+        "products":[
+            {
+                "name":"Arroz Blanco Top",
+                "price":850.0,
+                "weight_kg":1.0
+            },
+            {
+                "name":"Arroz Blanco Largo",
+                "price":1320,
+                "weight_kg":1.0
+            }
+        ],
+        "currency": "CUP"
+    }, 
+    {
+        "name": "Canelita",
+        "town": "Plaza de la Revolución",
+        "location": {
+            "street": "Calzada / H e I",
+            "coordinates": {
+                "latitude": 23.144289242769883,
+                "longitude": -82.39233474133954
+            }
+        },
+        "products":[
+            {
+                "name":"Arroz Blanco Super Extra",
+                "price":950.0,
+                "weight_kg":1.0
+            }
+        ],
+        "currency":"CUP"
+    },
+    {
+        "name": "Dulce María",
+        "town": "Plaza de la Revolución",
+        "location": {
+            "street": "Calzada / L & K",
+            "coordinates": {
+                "latitude": 23.14548294568802,
+                "longitude": -82.38870839480781
+            }
+        },
+        "products":[
+            {
+                "name":"Arroz Blanco",
+                "price":650.0,
+                "weight_kg":1.0
+            },
+            {
+                "name":"Long Grane White Rice",
+                "price":650.0,
+                "weight_kg":1.0            
+            }
+        ],
+        "currency":"CUP"
+    },
+    {
+        "name": "Bodegón B12",
+        "town": "Plaza de la Revolución",
+        "location": {
+        "street": "",
+        "coordinates": {
+            "latitude": null,
+            "longitude": null
+            }
+        },
+        "products":[
+            {
+                "name":"Arroz Blanco",
+                "price":700.0,
+                "weight_kg":1.0
+            },
+            {
+               "name": "Macarrones",
+               "price": 390.0,
+               "weight_kg": 0.5
+
+            }
+        ],
+        "currency":"CUP"
+    },
+    {
+       "name": "Ale´s Supermarket",
+        "town": "Plaza de la Revolución",
+        "location": {
+            "street": "Línea / 10 & 12",
+            "coordinates": {
+                "latitude": null,
+                "longitude": null
+            }
+        },
+        "products":[
+            {
+                "name": "Arroz Blanco",
+                "price": 750.0,
+                "brand": "Sublime",
+                "weight_kg": 1.0
+            },
+            {
+                "name": "Arroz Super Extra",
+                "price": 750.0,
+                "brand": "San Diego",
+                "weight_kg": 1.0
+            },
+            {
+              "name": "Azúcar Crystal",
+              "price": 750.0,
+              "brand": "Santaisabel",
+              "weight_kg": 1.0
+            },
+            {
+                "name": "Azúcar Crystal",
+                "price": 750.0,
+                "brand": "Energy",
+                "weight_kg": 1.0
+            },
+            {
+              "name": "Fijoles Negros",
+              "price": 800.0,
+              "brand": "Del Campo",
+              "weight_kg": 0.45
+            },
+            {
+                "name": "Café Soluble con Caramelo",
+                "price": 2100.0,
+                "brand": "Internacional",
+                "weight_kg": 0.0
+            },
+            {
+                "name": "Leche Entera Líquida",
+                "price": 1300.0,
+                "brand": "Vima",
+                "weight_lt": 1.0
+            },
+            {
+                "name": "Leche Entera Líquida",
+                "price": 1300.0,
+                "brand": "Covap",
+                "weight_lt": 1.0
+            }
+        ],
+        "currency":"CUP"
+    },
+    {
+        "name": "Fress",
+        "town": "Plaza de la Revolución",
+        "location": {
+            "street": "23 & 12",
+            "coordinates": {
+                "latitude": null,
+                "longitude": null
+            }
+        },
+        "products":[
+            {
+                "name": "Arroz Extra",
+                "price": 1600.0,
+                "brand": "Convirán",
+                "weight_kg": 1.0
+            },
+            {
+                "name": "Arroz Integral",
+                "price": 1575.0,
+                "weight_kg": 1.0,
+                "brand": "Convirán"
+            }
+        ],
+        "currency":"CUP"
+    },
+    {
+        "name": "Familia Peréz",
+        "town": "Plaza de la Revolución",
+        "location": {
+            "street": "23 & 24",
+            "coordinates": {
+                "latitude": null,
+                "longitude": null
+            }
+        },
+        "products":[
+            {
+                "name": "Arroz Blanco",
+                "price": 670.0,
+                "brand": "Onis",
+                "weight_kg": 1.0
+            },
+            {
+                "name": "Fijoles Negros",
+                "price": 800.0,
+                "brand": "Del Campo",
+                "weight_kg": 0.45
+            },
+            {
+                "name": "Fijoles Negros",
+                "price": 1000.0,
+                "brand": "Sublime",
+                "weight_kg": 1.0
+            },
+            {
+                "name": "Espaguetti",
+                "price": 350.0,
+                "brand": "Dolcezza",
+                "weight_kg": 0.5
+            },
+            {
+                "name": "Cartón de Huevos",
+                "price": 3000.0,
+                "brand": null,
+                "weight_kg": null
+            },
+            {
+                "name": "Medio Cartón de Huevos",
+                "price": 0.0,
+                "brand": null,
+                "weight_kg": null
+            },
+            {
+                "name": "Huevos Individual",
+                "price": 0.0,
+                "brand": null,
+                "weight_kg": null
+            }
+        ],
+        "currency":"CUP"
+    },
+    {
+       "name": "Mercado El Ten Cent",
+        "town": "Plaza de la Revolución",
+        "location": {
+            "street": "Calle 19 #870 e/ 4 y 6, Vedado Ave. Carlos III #704 e/ Soledad y Castillo Centro Habana ",
+            "coordinates": {
+                "latitude": 23.131283285903606,
+                "longitude": -82.39859303601817
+            }
+        },
+        "products":[
+            {
+                "name": "Arroz Super Extra",
+                "price": 780.0,
+                "brand": "KDM Gold",
+                "weight_kg": 0.9
+            },
+            {
+                "name": "Café Molido",
+                "price": 1800.0,
+                "brand": "Isla Grande",
+                "weight_kg": 0.250
+            },
+            {
+                "name": "Café Molido",
+                "price": 2450.0,
+                "brand": "Yeya",
+                "weight_kg": 0.283
+            },
+            {
+                "name": "Café Molido Expresso",
+                "price": 2200.0,
+                "brand": "Caribe",
+                "weight_kg": 0.284
+            },
+            {
+                "name": "Nescafé",
+                "price": 2800.0,
+                "brand": "Dolca",
+                "weight_kg": 0.080
+            },
+            {
+                "name": "Aceite de Oliva Virgen Extra",
+                "price": 8500.0,
+                "brand": "Badia",
+                "weight_lt": 0.500
+            },
+            {
+                "name": "Azúcar Crystal",
+                "price": 8500.0,
+                "brand": "Fresko",
+                "weight_lt": 1.0
+            }
+        ],
+        "currency":"CUP"
+    },
+    {
+        "name": "Andrea | Café & Mercado",
+        "town": "Plaza de la Revolución",
+        "location": {
+            "street": "Calle 23 esquina 12. Vedado",
+            "coordinates": {
+                "latitude": 23.127150881141585,
+                "longitude": -82.39991247653963
+            }
+        },
+        "products":[
+            {
+                "name": "Arroz Super Extra",
+                "price": 750.0,
+                "brand": "San Diego",
+                "weight_kg": 1.0
+            }
+        ],
+        "currency":"CUP"
+    },
+    {
+        "name": "Villa Amada",
+        "town": "Plaza de la Revolución",
+        "location": {
+            "street": "Calle 25 entre J e I, Vedado",
+            "coordinates": {
+                "latitude": 23.13714167830714,
+                "longitude": -82.3845369052301
+            }
+        },
+        "products":[
+            {
+                "name": "Fijoles Negros",
+                "price": 670.0,
+                "brand": "Del Campo",
+                "weight_kg": 0.45
+            },
+            {
+                "name": "Arroz Super Extra",
+                "price": 660.0,
+                "brand": "San Diego",
+                "weight_kg": 1.0
+            },
+            {
+                "name": "Leche Condensada Azucarada",
+                "price": 600.0,
+                "brand": "Del Campo",
+                "weight_lt": 0.390
+            },
+            {
+                "name": "Café Español",
+                "price": 1870.0,
+                "brand": "Bryderk",
+                "weight_kg": 0.250
+            },
+            {
+                "name": "Cafe Instantáneo",
+                "weight_kg": 0.050,
+                "brand": "Presto",
+                "price": 1180.0
+            },
+            {
+                "name": "Aceite de Soja",
+                "weight_lt": 0.9,
+                "brand": "Saude",
+                "price": 1150.0
+            }
+        ],
+        "currency":"CUP"
+    },
+    {
+        "name": "D'Lucy",
+        "town":"La Lisa",
+        "location": {
+            "street": "Calle 28 pasaje B E/235 y 237 XX Aniversario",
+            "coordinates": {
+                "latitude": 23.025011,
+                "longitude": -82.491708
+            }
+        },
+        "products":[
+            {
+                "name":"Arroz Blanco",
+                "brand": null,
+                "price": 630,
+                "weight_kg": 1.0
+            },
+            {
+                "name":"Aceite",
+                "price":650.0,
+                "brand":null,
+                "weight_lt": 0.9
+            },
+            {
+                "name":"Leche",
+                "price":880,
+                "brand":null,
+                "weight_kg":0.45
+            },
+            {
+                "name":"Refresco",
+                "price":200,
+                "brand":null,
+                "weight_lt":0.500
+            },
+            {
+                "name":"Cerveza",
+                "price":220,
+                "weight_lt":0.500,
+                "brand":null
+            },
+            {
+                "name":"Malta",
+                "price": 230,
+                "brand":"Guajirita",
+                "weight_lt":0.750
+            },
+            {
+                "name":"Jugo",
+                "price":160,
+                "brand":null,
+                "weight_lt":0.250
+            },
+            {
+                "name":"Azúcar Blanca",
+                "price":640.0,
+                "brand":null,
+                "weight_kg":1.0
+            }
+        ],
+        "currency":"CUP"
+    },
+    {
+        "name": "El Picotazo",
+        "town":"La Lisa",
+        "location": {
+            "street": "Avenida 251 #4405 E/44 y 46 Punta Brava",
+            "coordinates": {
+                "latitude": 23.016240,
+                "longitude": -82.497709
+            }
+        },
+        "products":[
+            {
+                "name":"Arroz Blanco",
+                "price":700,
+                "brand":null,
+                "weight_kg":1.0
+            },
+            {
+                "name":"Aceite",
+                "price":1200,
+                "brand":null,
+                "weight_lt":1.0
+            },
+            {
+                "name":"Leche",
+                "price":2500,
+                "brand":null,
+                "weight_kg":1.0
+            },
+            {
+                "name":"Leche Condensada Azucarada",
+                "price":600.0,
+                "brand":null,
+                "weight_lt":0.390
+            },
+            {
+                "name":"Refresco",
+                "price":250.0,
+                "brand":"Booms Boom",
+                "weight_lt":0.500
+            },
+            {
+                "name":"Cerveza",
+                "price":220,
+                "brand":"Cristal",
+                "weight_lt":0.500
+            },
+            {
+                "name":"Cerveza",
+                "price":220,
+                "brand":"Cabeza de lobo",
+                "weight_lt":0.500
+            },
+            {
+                "name":"Malta",
+                "price":350,
+                "brand":"Perla Negra",
+                "weight_lt":0.500
+            },
+            {
+                "name":"Jugo",
+                "price": 180,
+                "brand": null,
+                "weight_lt":0.250
+            },
+            {
+                "name":"Pechuga de Pollo",
+                "price":5500,
+                "brand":null,
+                "weight_kg":2.5
+            },
+            {
+                "name":"Mollejas",
+                "price": 1200,
+                "brand":null,
+                "weight_kg":1.0
+            },
+            {
+                "name":"Hígado",
+                "price":850.0,
+                "brand":null,
+                "weight_kg":1.0
+            },
+            {
+                "name":"Azúcar Blanca",
+                "price":800.0,
+                "brand":"Caiobá",
+                "weight_kg":1.0
+            },
+            {
+                "name":"Sal",
+                "price":420.0,
+                "brand":null,
+                "weight_kg":1.0
+            },
+            {
+                "name":"Pan",
+                "price":400,
+                "brand":null,
+                "weight_kg":null
+            },
+            {
+                "name":"Frijoles Negros",
+                "brand":null,
+                "price":1000,
+                "weight_kg":1.0
+            },
+            {
+                "name":"Chícharos verdes",
+                "price":700.0,
+                "brand":null,
+                "weight_kg":1.0
+            },
+            {
+                "name":"Garbanzos",
+                "price":800,
+                "brand":null,
+                "weight_kg":1.0
+            },
+            {
+                "name":"Cartón de Huevos",
+                "price":2850,
+                "brand":null,
+                "weight_kg":null
+            }
+
+        ],
+        "currency":"CUP"
+    }
+
+]

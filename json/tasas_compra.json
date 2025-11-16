@@ -1,0 +1,23 @@
+{
+  "ultima_actualizacion": "2025-11-15T23:47:42.231838",
+  "fuente": "El Toque",
+  "url": "https://eltoque.com/tasas-de-cambio-de-moneda-en-cuba-hoy",
+  "tasas_compra": [
+    {
+      "moneda": "USD",
+      "compra": "460"
+    },
+    {
+      "moneda": "EUR",
+      "compra": "500"
+    },
+    {
+      "moneda": "MLC",
+      "compra": "220"
+    },
+    {
+      "moneda": "CUP",
+      "compra": "100"
+    }
+  ]
+}
