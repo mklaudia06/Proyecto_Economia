@@ -13,6 +13,7 @@
             {
                 "name":"Arroz Blanco",
                 "price":680.0,
+                "brand":"Camil",
                 "weight_kg": 1.0
             }
         ],
@@ -32,6 +33,7 @@
             {
                 "name":"Arroz Super Extra",
                 "price":580.0,
+                "brand":"San Diego",
                 "weight_kg": 1.0
             }   
         ],
@@ -51,11 +53,13 @@
             {
                 "name":"Arroz Blanco Top",
                 "price":850.0,
+                "brand":null,
                 "weight_kg":1.0
             },
             {
                 "name":"Arroz Blanco Largo",
                 "price":1320,
+                "brand":null,
                 "weight_kg":1.0
             }
         ],
@@ -75,6 +79,7 @@
             {
                 "name":"Arroz Blanco Super Extra",
                 "price":950.0,
+                "brand":null,
                 "weight_kg":1.0
             }
         ],
@@ -94,11 +99,13 @@
             {
                 "name":"Arroz Blanco",
                 "price":650.0,
+                "brand":"Extremo Sabor",
                 "weight_kg":1.0
             },
             {
                 "name":"Long Grane White Rice",
                 "price":650.0,
+                "brand":"Energy",
                 "weight_kg":1.0            
             }
         ],
@@ -108,7 +115,7 @@
         "name": "Bodegón B12",
         "town": "Plaza de la Revolución",
         "location": {
-        "street": "",
+        "street": null,
         "coordinates": {
             "latitude": null,
             "longitude": null
@@ -118,11 +125,13 @@
             {
                 "name":"Arroz Blanco",
                 "price":700.0,
+                "brand":"Qbanito",
                 "weight_kg":1.0
             },
             {
                "name": "Macarrones",
                "price": 390.0,
+               "brand":"Qbanito",
                "weight_kg": 0.5
 
             }
@@ -131,12 +140,12 @@
     },
     {
        "name": "Ale´s Supermarket",
-        "town": "Plaza de la Revolución",
-        "location": {
+       "town": "Plaza de la Revolución",
+       "location": {
             "street": "Línea / 10 & 12",
             "coordinates": {
-                "latitude": null,
-                "longitude": null
+                "latitude": 23.133452,
+                "longitude":  -82.404671
             }
         },
         "products":[
@@ -197,8 +206,8 @@
         "location": {
             "street": "23 & 12",
             "coordinates": {
-                "latitude": null,
-                "longitude": null
+                "latitude": 23.127363,
+                "longitude":  -82.399613
             }
         },
         "products":[
@@ -223,8 +232,8 @@
         "location": {
             "street": "23 & 24",
             "coordinates": {
-                "latitude": null,
-                "longitude": null
+                "latitude": 23.123311, 
+                "longitude": -82.404880
             }
         },
         "products":[
@@ -587,6 +596,44 @@
                 "weight_kg":null
             }
 
+        ],
+        "currency":"CUP"
+    },
+    {
+        "name": "La Loca",
+        "town":"Cerro",
+        "location": {
+            "street": null,
+            "coordinates": {
+                "latitude": 23.07540405820975,
+                "longitude": -82.35821067834236
+            }
+        }, 
+        "products":[
+            {
+                "name":"Frijoles Negros",
+                "price":450.0,
+                "brand":"Suchel",
+                "weight_kg":1.0
+            },
+            {
+                "name":"Arroz",
+                "price":600,
+                "brand":"Gallo",
+                "weight_kg":1.0
+            },
+            {
+                "name":"Aceite",
+                "price":950.0,
+                "brand":"Diana",
+                "weight_lt":0.9
+            },
+            {
+                "name":"Pollo",
+                "price":500,
+                "brand":null,
+                "weight_kg":null
+            }
         ],
         "currency":"CUP"
     }
