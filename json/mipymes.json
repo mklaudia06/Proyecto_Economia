@@ -4,10 +4,7 @@
         "town": "Plaza de la Revolución",
         "location": {
             "street": "Calzada / Paseo & A",
-            "coordinates": {
-                "latitude": 23.137886472972525,
-                "longitude": -82.39905099268489
-            }
+            "coordinates_latitude_length": [23.137886472972525, -82.39905099268489]
         },
         "products": [
             {
@@ -24,10 +21,7 @@
         "town": "Plaza de la Revolución",
         "location": {
             "street": "Calle 5ta / E & F",
-            "coordinates": {
-                "latitude": 23.142513466690126,
-                "longitude": -82.39636878359543
-            }
+            "coordinates_latitude_length": [23.142513466690126,-82.3963687835954]
         },
         "products":[
             {
@@ -44,10 +38,7 @@
         "town": "Plaza de la Revolución",
         "location": {
             "street": "Calle F / 3ra y 5ta, Edif. 53, Vedado",
-            "coordinates": {
-                "latitude": 23.143549338937667,
-                "longitude": -82.39613274924378
-            }
+            "coordinates_latitude_length": [23.143549338937667,-82.39613274924378]
         },
         "products":[
             {
@@ -70,10 +61,7 @@
         "town": "Plaza de la Revolución",
         "location": {
             "street": "Calzada / H e I",
-            "coordinates": {
-                "latitude": 23.144289242769883,
-                "longitude": -82.39233474133954
-            }
+            "coordinates_latitude_length":[23.144289242769883,-82.39233474133954]
         },
         "products":[
             {
@@ -90,10 +78,7 @@
         "town": "Plaza de la Revolución",
         "location": {
             "street": "Calzada / L & K",
-            "coordinates": {
-                "latitude": 23.14548294568802,
-                "longitude": -82.38870839480781
-            }
+            "coordinates_latitude_length": [23.14548294568802,-82.3887083948078]
         },
         "products":[
             {
@@ -116,10 +101,7 @@
         "town": "Plaza de la Revolución",
         "location": {
         "street": null,
-        "coordinates": {
-            "latitude": null,
-            "longitude": null
-            }
+        "coordinates_latitude_length": null
         },
         "products":[
             {
@@ -143,10 +125,7 @@
        "town": "Plaza de la Revolución",
        "location": {
             "street": "Línea / 10 & 12",
-            "coordinates": {
-                "latitude": 23.133452,
-                "longitude":  -82.404671
-            }
+            "coordinates_latitude_length": [23.133452,-82.404671]
         },
         "products":[
             {
@@ -205,10 +184,7 @@
         "town": "Plaza de la Revolución",
         "location": {
             "street": "23 & 12",
-            "coordinates": {
-                "latitude": 23.127363,
-                "longitude":  -82.399613
-            }
+            "coordinates_latitude_length": [23.127363,-82.399613]
         },
         "products":[
             {
@@ -231,10 +207,7 @@
         "town": "Plaza de la Revolución",
         "location": {
             "street": "23 & 24",
-            "coordinates": {
-                "latitude": 23.123311, 
-                "longitude": -82.404880
-            }
+            "coordinates_latitude_length": [23.123311,-82.404880]
         },
         "products":[
             {
@@ -284,13 +257,10 @@
     },
     {
        "name": "Mercado El Ten Cent",
-        "town": "Plaza de la Revolución",
-        "location": {
+       "town": "Plaza de la Revolución",
+       "location": {
             "street": "Calle 19 #870 e/ 4 y 6, Vedado Ave. Carlos III #704 e/ Soledad y Castillo Centro Habana ",
-            "coordinates": {
-                "latitude": 23.131283285903606,
-                "longitude": -82.39859303601817
-            }
+            "coordinates_latitude_length": [23.131283285903606,-82.39859303601817]
         },
         "products":[
             {
@@ -343,10 +313,7 @@
         "town": "Plaza de la Revolución",
         "location": {
             "street": "Calle 23 esquina 12. Vedado",
-            "coordinates": {
-                "latitude": 23.127150881141585,
-                "longitude": -82.39991247653963
-            }
+            "coordinates_latitude_length": [23.127150881141585,-82.39991247653963]
         },
         "products":[
             {
@@ -363,10 +330,7 @@
         "town": "Plaza de la Revolución",
         "location": {
             "street": "Calle 25 entre J e I, Vedado",
-            "coordinates": {
-                "latitude": 23.13714167830714,
-                "longitude": -82.3845369052301
-            }
+            "coordinates_latitude_length": [23.13714167830714,-82.3845369052301]
         },
         "products":[
             {
@@ -413,10 +377,7 @@
         "town":"La Lisa",
         "location": {
             "street": "Calle 28 pasaje B E/235 y 237 XX Aniversario",
-            "coordinates": {
-                "latitude": 23.025011,
-                "longitude": -82.491708
-            }
+            "coordinates_latitude_length": [23.025011,-82.491708]
         },
         "products":[
             {
@@ -475,10 +436,7 @@
         "town":"La Lisa",
         "location": {
             "street": "Avenida 251 #4405 E/44 y 46 Punta Brava",
-            "coordinates": {
-                "latitude": 23.016240,
-                "longitude": -82.497709
-            }
+            "coordinates_latitude_length": [23.016240,-82.497709]
         },
         "products":[
             {
@@ -604,10 +562,7 @@
         "town":"Cerro",
         "location": {
             "street": null,
-            "coordinates": {
-                "latitude": 23.07540405820975,
-                "longitude": -82.35821067834236
-            }
+            "coordinates_latitude_length": [23.07540405820975,-82.35821067834236]
         }, 
         "products":[
             {
