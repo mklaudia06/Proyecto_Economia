@@ -13,6 +13,6 @@ def map (archivo):
         name = dictionaries['name']
         if dictionaries['location']['coordinates_latitude_length'] is not None:
             latitud, longitud = dictionaries['location']['coordinates_latitude_length']
-            icono = fm.CustomIcon(icon_image="icono.jpg",icon_size = (40,40))
+            icono = fm.CustomIcon(icon_image="icono.jpg",icon_size = (40,50))
             fm.Marker(location=[latitud,longitud],popup=name,icon=icono).add_to(mapa)
     return mapa
