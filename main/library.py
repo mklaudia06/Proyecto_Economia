@@ -62,3 +62,7 @@ def precios_topados(dictionaries):
     plt.show()
     
     return dicccionario
+
+def promedio_precios(diccionario):
+    products_basic = ['arroz','sal','frijoles','aceite','leche']
+    
