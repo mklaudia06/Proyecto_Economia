@@ -1,6 +1,6 @@
 import folium as fm
 import json
-
+import matplotlib.pyplot as plt
 
 def read_archive(ruta):
     with open(ruta,'r', encoding="utf-8") as archivo:
@@ -16,3 +16,49 @@ def map (archivo):
             icono = fm.CustomIcon(icon_image="icono.jpg",icon_size = (40,50))
             fm.Marker(location=[latitud,longitud],popup=name,icon=icono).add_to(mapa)
     return mapa
+
+def porciento(parte,todo):
+    return (parte/todo)*100
+
+def precios_topados(dictionaries):
+    dicccionario = {'pollo_ontop':0,'pollo_under':0,'aceite_ontop': 0,'aceite_under':0,'leche_ontop':0,'leche_under':0}
+    for dictionary in dictionaries:
+        dicionarios = dictionary['products']
+        for i in dicionarios:
+            name = i['name'].lower()
+            price = i['price']
+            if 'pollo' in name:
+                if price <= 680:
+                    dicccionario['pollo_under'] += 1
+                else:
+                    dicccionario['pollo_ontop'] += 1
+            if 'aceite' in name:
+                if price <= 990:
+                    dicccionario['aceite_under'] += 1
+                else:
+                    dicccionario['aceite_ontop'] += 1
+            if 'leche' in name:
+                if price <= 1675:
+                    dicccionario['leche_under'] += 1
+                else:
+                    dicccionario['leche_ontop'] += 1
+    products = ['Pollo','Aceite','Leche']
+    under = [dicccionario['pollo_under'], dicccionario['aceite_under'], dicccionario['leche_under']]
+    ontop = [dicccionario['pollo_ontop'], dicccionario['aceite_ontop'], dicccionario['leche_ontop']]
+    plt.figure(figsize=(10, 6))
+    
+    plt.figure(figsize=(10, 6))
+    
+    x = range(len(products))
+    plt.bar(x, under, width=0.4, label='Por debajo del precio topado', color='green', alpha=0.7)
+    plt.bar([i + 0.4 for i in x], ontop, width=0.4, label='Sobre el precio topado', color='red', alpha=0.7)
+    
+    plt.xlabel('Productos')
+    plt.ylabel('Cantidad de Productos')
+    plt.title('Comparación de Precios: Bajo vs Sobre el Tope')
+    plt.xticks([i + 0.2 for i in x], products)
+    plt.legend()
+    plt.grid(True, alpha=0.3)
+    plt.show()
+    
+    return dicccionario
