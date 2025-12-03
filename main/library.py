@@ -74,8 +74,6 @@ def precios_topados(dictionaries):
     plt.legend()
     plt.grid(True, alpha=0.3)
     plt.show()
-    
-    return dicccionario
 
 def promedio (lista):
     n = len(lista)
@@ -86,7 +84,7 @@ def promedio_precios(diccionario):
     products_basic = ['arroz','sal','frijoles','aceite','leche']
     suma = {}
     names,prices = take_name_price(diccionario)
-    for product in products_basic:
+    for product.lower() in products_basic:
         suma[product] = []
     for i in range(len(names)):
         producto = names[i]
@@ -96,19 +94,21 @@ def promedio_precios(diccionario):
                 suma[product].append(precio)
     promedios = []
     for _,value in suma.items():
-        promedio.append(promedio(value))
+        if value:
+            promedios_calculados = promedio(value)
+            promedios.append(promedios_calculados)
+        else:
+            promedios.append(0)
     
     plt.figure(figsize=(10, 6))
     plt.bar(products_basic, promedios, color='skyblue')
     plt.title('Promedio de Precios de Productos Básicos')
     plt.xlabel('Productos')
     plt.ylabel('Precio Promedio ($)')
-    plt.xticks(rotation=45)
+    plt.xticks(rotation=0)
     plt.grid(axis='y', alpha=0.3)
-    
     for i, v in enumerate(promedios):
-        plt.text(i, v, f'${v:.2f}', ha='center', va='bottom')
-    
+        plt.text(i, v, f'${v:.1f}', ha='center', va='bottom')
     plt.tight_layout()
     plt.show()
-    return promedios            
+              
