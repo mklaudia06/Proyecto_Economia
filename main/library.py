@@ -20,44 +20,46 @@ def map (archivo):
 def porciento(parte,todo):
     return (parte/todo)*100
 
-def take_name (dictionaries):
+def take_name_price(dictionaries):
+    names = []  
+    prices = [] 
+    
+    for dictionary in dictionaries:
+        productos = dictionary['products']
+        for producto in productos:
+            name = producto['name'].lower()
+            price = producto['price']
+            names.append(name)
+            prices.append(price)
+    
+    return names, prices 
+
+def precios_topados(dictionaries):
+    dicccionario = {'pollo_ontop':0,'pollo_under':0,'aceite_ontop': 0,'aceite_under':0,'leche_ontop':0,'leche_under':0}
     for dictionary in dictionaries:
         dicionarios = dictionary['products']
         for i in dicionarios:
             name = i['name'].lower()
-    return name
-
-def take_price(dictionaries):
-    for dictionary in dictionaries:
-        dicionarios = dictionary['products']
-        for i in dicionarios:
             price = i['price']
-    return price
-
-
-def precios_topados(dictionaries):
-    dicccionario = {'pollo_ontop':0,'pollo_under':0,'aceite_ontop': 0,'aceite_under':0,'leche_ontop':0,'leche_under':0}
-    name = take_name(dictionaries)
-    price = take_price(dictionaries)
-    if 'pollo' in name:
-        if price <= 680:
-            dicccionario['pollo_under'] += 1
-        else:
-            dicccionario['pollo_ontop'] += 1
-    if 'aceite' in name:
-        if price <= 990:
-            dicccionario['aceite_under'] += 1
-        else:
-            dicccionario['aceite_ontop'] += 1
-    if 'leche' in name:
-        if price <= 1675:
-            dicccionario['leche_under'] += 1
-        else:
-            dicccionario['leche_ontop'] += 1
+            if 'pollo' in name:
+                if price <= 680:
+                    dicccionario['pollo_under'] += 1
+                else:
+                    dicccionario['pollo_ontop'] += 1
+            if 'aceite' in name:
+                if price <= 990:
+                    dicccionario['aceite_under'] += 1
+                else:
+                    dicccionario['aceite_ontop'] += 1
+            if 'leche' in name:
+                if price <= 1675:
+                    dicccionario['leche_under'] += 1
+                else:
+                    dicccionario['leche_ontop'] += 1
     products = ['Pollo','Aceite','Leche']
     under = [dicccionario['pollo_under'], dicccionario['aceite_under'], dicccionario['leche_under']]
     ontop = [dicccionario['pollo_ontop'], dicccionario['aceite_ontop'], dicccionario['leche_ontop']]
-  
+    plt.figure(figsize=(10, 6))
     
     plt.figure(figsize=(10, 6))
     
@@ -75,10 +77,38 @@ def precios_topados(dictionaries):
     
     return dicccionario
 
+def promedio (lista):
+    n = len(lista)
+    suma = sum(lista)
+    return suma/n
+
 def promedio_precios(diccionario):
     products_basic = ['arroz','sal','frijoles','aceite','leche']
-    name = take_name(diccionario)
-    price = take_price(diccionario)
+    suma = {}
+    names,prices = take_name_price(diccionario)
     for product in products_basic:
-
+        suma[product] = []
+    for i in range(len(names)):
+        producto = names[i]
+        precio = prices[i]
+        for product in products_basic:
+            if product in producto:  
+                suma[product].append(precio)
+    promedios = []
+    for _,value in suma.items():
+        promedio.append(promedio(value))
     
+    plt.figure(figsize=(10, 6))
+    plt.bar(products_basic, promedios, color='skyblue')
+    plt.title('Promedio de Precios de Productos Básicos')
+    plt.xlabel('Productos')
+    plt.ylabel('Precio Promedio ($)')
+    plt.xticks(rotation=45)
+    plt.grid(axis='y', alpha=0.3)
+    
+    for i, v in enumerate(promedios):
+        plt.text(i, v, f'${v:.2f}', ha='center', va='bottom')
+    
+    plt.tight_layout()
+    plt.show()
+    return promedios            
