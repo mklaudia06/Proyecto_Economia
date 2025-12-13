@@ -1,7 +1,7 @@
 import folium as fm
 import json
 import matplotlib.pyplot as plt
-import numpy as np
+
 
 def read_archive(ruta):
     with open(ruta,'r', encoding="utf-8") as archivo:
@@ -195,19 +195,57 @@ def generar_graficos_promedio(datos_promedios):
         plt.show() 
 
 
-def count_product_marcas(dicc):
-    #contar que cantidad son nacionales o internacionales
-    pass
+def origen_marcas (dicc):
+
+    categorias = {
+        "Internacionales": 0,
+        "Nacionales": 0,
+    }
+    total = 0
+    for dicts in dicc:
+        products = dicts['products']
+        for p_dict in products:
+            if p_dict['brand'] is not None:
+                total += 1
+                if p_dict['nacional']:
+                    categorias['Nacionales'] += 1
+                else:
+                    categorias['Internacionales'] += 1
+    porcentaje = [porciento(categorias['Internacionales'],total), porciento(categorias['Nacionales'],total)]
+    
+    # Gráfico con porcentajes
+
+    plt.figure(figsize=(8, 6))
+    plt.pie(porcentaje, labels=categorias.keys(), autopct='%1.1f%%')
+    plt.title('Distribución con porcentajes')
+    plt.show()
 
 def marcas_internacionales_nacionales(diccionario):
-    #por ciento de marcas nacionales e internacionales
-    #comparar los productos de la canasta basica de las marcas nacionales con la internacionales, 
-    #es lo mismo que la funcion de arriba para divido por tipos de marcas
+    #comparar los productos de la canasta basica de las marcas nacionales con la internacionales
     pass
 
-def convert_dollar(eltoque,dicc):
-    #llevar el precio de los productos a dolar
-    pass
+def convertir_usd_a_cup(lista_productos_usd, eltoque):
+    tasa_usd_compra = 0.0
+    
+    for tasa in eltoque.get("tasas_compra", []):
+        if tasa.get("moneda") == "USD":
+                tasa_usd_compra = float(tasa.get("compra", 0)) 
+    
+    productos_en_cup = []
+    
+    for producto_usd in lista_productos_usd:
+        nombre_producto = producto_usd.get("name")
+        precio_usd = producto_usd.get("price")
+        
+        if nombre_producto:
+            precio_cup = round(precio_usd * tasa_usd_compra, 2)
+            productos_en_cup.append({
+                "name": nombre_producto,
+                "price": precio_cup,
+                "currency": "CUP"
+            })
+
+    return productos_en_cup
 
 def comparar_dollar():
     #comparar los productos basicos de una tienda en dolar con los de las mipymes
