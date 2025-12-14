@@ -233,7 +233,6 @@ def lista_productos (diccionario):
 def porciento_marcas_productos(diccionario):
     products_basic = ['arroz', 'frijoles', 'aceite', 'leche', 'azucar']
     products = lista_productos(diccionario)  
-    
     conteo_productos = {}
     for producto in products_basic:
         conteo_productos[producto] = {
@@ -334,7 +333,8 @@ def porciento_marcas_productos(diccionario):
     plt.tight_layout()
     plt.show()
 
-def convertir_usd_a_cup(lista_productos_usd, eltoque):
+def convertir_usd_a_cup(lista_productos_usd):
+    eltoque = read_archive('../json/tasas_compra.json')
     tasa_usd_compra = 0.0
     
     for tasa in eltoque.get("tasas_compra", []):
@@ -351,15 +351,88 @@ def convertir_usd_a_cup(lista_productos_usd, eltoque):
             precio_cup = round(precio_usd * tasa_usd_compra, 2)
             productos_en_cup.append({
                 "name": nombre_producto,
-                "price": precio_cup,
-                "currency": "CUP"
+                "price": precio_cup
             })
 
     return productos_en_cup
 
-def topes_dollar (precios_topados,tienda_dollar):
-    # ver si las tiendas en dollar estatales respetan el tope de los productos
-    pass
+def topes_dollar(precios_topados, tienda_dollar):
+    precios_topados = read_archive(precios_topados)
+    list_products = lista_productos(tienda_dollar)
+    productos_cup = convertir_usd_a_cup(list_products)
+    
+    # Diccionario para almacenar resultados
+    resultados = {}
+    
+    # Calcular excesos para cada producto topado
+    for producto_key, precio_tope in precios_topados.items():
+        # Buscar este producto en la tienda
+        precio_tienda = 0
+        for producto_tienda in productos_cup:
+            nombre_tienda = producto_tienda.get('name', '').lower()
+            
+            # Verificar coincidencia simple (primera palabra del key)
+            palabra_clave = producto_key.split('_')[0].lower()
+            if palabra_clave in nombre_tienda:
+                precio_tienda = producto_tienda.get('precio_cup', 0)
+                break
+        
+        # Calcular exceso
+        exceso = precio_tienda - precio_tope
+        if exceso < 0:
+            exceso = 0
+            
+        # Guardar resultado
+        resultados[producto_key] = {
+            'nombre': producto_key.replace('_', ' ').title(),
+            'topado': precio_tope,
+            'tienda': precio_tienda,
+            'exceso': exceso
+        }
+    
+    # Ordenar por exceso (mayor a menor)
+    items_ordenados = sorted(
+        resultados.items(),
+        key=lambda x: x[1]['exceso'],
+        reverse=True
+    )
+    
+    # Preparar datos para gráfica
+    nombres = [item[1]['nombre'] for item in items_ordenados]
+    excesos = [item[1]['exceso'] for item in items_ordenados]
+    precios_tienda = [item[1]['tienda'] for item in items_ordenados]
+    precios_topado = [item[1]['topado'] for item in items_ordenados]
+    
+    # Crear gráfico
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 6))
+    
+    # GRÁFICA 1: Barras horizontales de excesos
+    bars = ax1.barh(nombres, excesos, color=['#ff6b6b', '#ffa726', '#42a5f5', '#66bb6a'][:len(nombres)])
+    
+    # Etiquetas en barras
+    for bar, valor in zip(bars, excesos):
+        if valor > 0:
+            width = bar.get_width()
+            ax1.text(width + 20, bar.get_y() + bar.get_height()/2,
+                    f'+{int(valor):,} CUP', ha='left', va='center', fontweight='bold')
+    
+    ax1.set_xlabel('Exceso sobre precio topado (CUP)')
+    ax1.set_title('EXTRA pagado en tienda en dólares')
+    ax1.grid(True, alpha=0.3, axis='x')
+    
+    # Calcular y mostrar total
+    total_exceso = sum(excesos)
+    
+    
+    # Añadir información de total en gráfica
+    fig.text(0.02, 0.02, f'Total exceso: {total_exceso:,} CUP', 
+             fontsize=11, fontweight='bold',
+             bbox=dict(boxstyle='round', facecolor='yellow', alpha=0.8))
+    
+    plt.tight_layout()
+    plt.show()
+    
+    return resultados
 
 
 def precio_canasta_basica(diccionario):
