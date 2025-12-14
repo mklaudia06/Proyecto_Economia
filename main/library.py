@@ -213,16 +213,121 @@ def origen_marcas (dicc):
                     categorias['Internacionales'] += 1
     porcentaje = [porciento(categorias['Internacionales'],total), porciento(categorias['Nacionales'],total)]
     
-    # Gráfico con porcentajes
-
     plt.figure(figsize=(8, 6))
     plt.pie(porcentaje, labels=categorias.keys(), autopct='%1.1f%%')
     plt.title('Distribución con porcentajes')
     plt.show()
 
-def marcas_internacionales_nacionales(diccionario):
-    #comparar los productos de la canasta basica de las marcas nacionales con la internacionales
-    pass
+def lista_productos (diccionario):
+    products = []
+    for dict in diccionario:
+        for product in dict['products']:
+            products.append(product)
+    return products
+
+def porciento_marcas_productos(diccionario):
+    products_basic = ['arroz', 'frijoles', 'aceite', 'leche', 'azucar']
+    products = lista_productos(diccionario)  
+    
+    conteo_productos = {}
+    for producto in products_basic:
+        conteo_productos[producto] = {
+            'nacional': 0,
+            'internacional': 0
+        }
+    
+    for producto in products:
+        nombre = producto['name'].lower()  
+        for basico in products_basic:
+            if basico in nombre:
+                if producto['nacional']: 
+                    conteo_productos[basico]['nacional'] += 1
+                else:  
+                    conteo_productos[basico]['internacional'] += 1
+                break  
+    
+    productos_nombres = [p.capitalize() for p in products_basic]
+    nacionales_counts = []
+    internacionales_counts = []
+    porcentajes_nacional = []
+    porcentajes_inter = []
+    
+    for producto in products_basic:
+        n = conteo_productos[producto]['nacional']
+        i = conteo_productos[producto]['internacional']
+        total = n + i
+        
+        nacionales_counts.append(n)
+        internacionales_counts.append(i)
+        
+        if total > 0:
+            porcentajes_nacional.append((n / total) * 100)
+            porcentajes_inter.append((i / total) * 100)
+        else:
+            porcentajes_nacional.append(0)
+            porcentajes_inter.append(0)
+    
+    # Crear gráfica con dos subplots
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 6))
+    
+    # ===== GRÁFICA 1: Barras agrupadas (cantidades absolutas) =====
+    x_pos = list(range(len(productos_nombres)))
+    width = 0.35
+    
+    # Barras nacionales
+    bars_nac = ax1.bar([x - width/2 for x in x_pos], nacionales_counts, width,
+                      label='Nacional', color='#1f77b4', alpha=0.8)
+    
+    # Barras internacionales
+    bars_int = ax1.bar([x + width/2 for x in x_pos], internacionales_counts, width,
+                      label='Internacional', color='#ff7f0e', alpha=0.8)
+    
+    ax1.set_xlabel('Productos', fontsize=11, fontweight='bold')
+    ax1.set_ylabel('Cantidad', fontsize=11, fontweight='bold')
+    ax1.set_title('Cantidad de Marcas por Producto', fontsize=13, fontweight='bold')
+    ax1.set_xticks(x_pos)
+    ax1.set_xticklabels(productos_nombres, fontsize=10)
+    ax1.legend()
+    ax1.grid(axis='y', alpha=0.3)
+    
+    # Agregar valores en las barras
+    for bars in [bars_nac, bars_int]:
+        for bar in bars:
+            height = bar.get_height()
+            if height > 0:
+                ax1.text(bar.get_x() + bar.get_width()/2, height + 0.1,
+                        f'{int(height)}', ha='center', va='bottom', fontsize=9)
+    
+    #GRÁFICA 2: Barras apiladas (porcentajes)
+    # Crear barras apiladas
+    ax2.bar(productos_nombres, porcentajes_nacional, 
+           label='Nacional', color='#1f77b4', alpha=0.8)
+    
+    ax2.bar(productos_nombres, porcentajes_inter, 
+           bottom=porcentajes_nacional,
+           label='Internacional', color='#ff7f0e', alpha=0.8)
+    
+    ax2.set_xlabel('Productos', fontsize=11, fontweight='bold')
+    ax2.set_ylabel('Porcentaje (%)', fontsize=11, fontweight='bold')
+    ax2.set_title('Distribución Porcentual', fontsize=13, fontweight='bold')
+    ax2.set_xticklabels(productos_nombres, rotation=45, fontsize=10)
+    ax2.legend()
+    ax2.grid(axis='y', alpha=0.3)
+    
+    # Agregar porcentajes en la gráfica apilada
+    for idx, (nacional, inter) in enumerate(zip(porcentajes_nacional, porcentajes_inter)):
+        if nacional > 0:
+            ax2.text(idx, nacional/2, f'{nacional:.1f}%', 
+                    ha='center', va='center', color='white', fontweight='bold', fontsize=9)
+        if inter > 0:
+            ax2.text(idx, nacional + inter/2, f'{inter:.1f}%', 
+                    ha='center', va='center', color='white', fontweight='bold', fontsize=9)
+    
+    plt.suptitle('Análisis de Marcas Nacionales vs Internacionales\nProductos de Canasta Básica', 
+                fontsize=14, fontweight='bold', y=1.02)
+    
+    plt.tight_layout()
+    plt.show()
 
 def convertir_usd_a_cup(lista_productos_usd, eltoque):
     tasa_usd_compra = 0.0
@@ -252,11 +357,26 @@ def comparar_dollar():
     pass
 
 
-def precio_canasta_basica():
+def precio_canasta_basica(diccionario):
     #hacer un recuento de los productos de la canasta basica y buscar los de menor precio y sumarlos
-    #luego los de mayor precio y sumarlos
+    products_basic = ['arroz', 'frijoles', 'aceite', 'leche', 'azucar']
+    menor_precio = []
+    productos = lista_productos(diccionario)
+    precios = {"arroz":[], 'frijoles':[], 'aceite':[],'leche':[],'azucar':[]}
+    for producto in productos:
+        nombre = producto['name'].lower()  
+        for basico in products_basic:
+            if basico in nombre:
+                precios[basico].append(producto['price'])
+    for basico in products_basic:
+        if precios[basico]: 
+            menor_precio.append(min(precios[basico]))
+        else:
+            menor_precio.append(0)
+    
+    suma = sum(menor_precio)
+    return suma
 
-    pass
 def salario():
     #comparar el precio total de la canasta basica en una mipyme con el salario promedio de un trabajador
     #incluso ver el tipo de trabajo del individuo y comparar el salario total de un pesquero por ejemplo
