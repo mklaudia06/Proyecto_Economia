@@ -36,7 +36,7 @@ def take_name_price(dictionaries):
     return names, prices 
 
 def precios_topados(dictionaries):
-    dicccionario = {'pollo_ontop':0,'pollo_under':0,'aceite_ontop': 0,'aceite_under':0,'leche_ontop':0,'leche_under':0}
+    dicccionario = {'pollo_ontop':0,'pollo_under':0,'aceite_ontop': 0,'aceite_under':0,'leche_ontop':0,'leche_under':0, 'salchichas_under':0, 'salchichas_ontop':0}
     for dictionary in dictionaries:
         dicionarios = dictionary['products']
         for i in dicionarios:
@@ -57,9 +57,14 @@ def precios_topados(dictionaries):
                     dicccionario['leche_under'] += 1
                 else:
                     dicccionario['leche_ontop'] += 1
-    products = ['Pollo','Aceite','Leche']
-    under = [dicccionario['pollo_under'], dicccionario['aceite_under'], dicccionario['leche_under']]
-    ontop = [dicccionario['pollo_ontop'], dicccionario['aceite_ontop'], dicccionario['leche_ontop']]
+            if 'salchichas' in name:
+                if price <= 1045:
+                    dicccionario['salchichas_under'] += 1
+                else:
+                    dicccionario['salchichas_ontop'] += 1                    
+    products = ['Pollo','Aceite','Leche','Salchichas']
+    under = [dicccionario['pollo_under'], dicccionario['aceite_under'], dicccionario['leche_under'],dicccionario['salchichas_under']]
+    ontop = [dicccionario['pollo_ontop'], dicccionario['aceite_ontop'], dicccionario['leche_ontop'],dicccionario['salchichas_ontop']]
     plt.figure(figsize=(10, 6))
     
     plt.figure(figsize=(10, 6))
@@ -352,8 +357,8 @@ def convertir_usd_a_cup(lista_productos_usd, eltoque):
 
     return productos_en_cup
 
-def comparar_dollar():
-    #comparar los productos basicos de una tienda en dolar con los de las mipymes
+def topes_dollar (precios_topados,tienda_dollar):
+    # ver si las tiendas en dollar estatales respetan el tope de los productos
     pass
 
 
@@ -377,9 +382,114 @@ def precio_canasta_basica(diccionario):
     suma = sum(menor_precio)
     return suma
 
-def salario():
-    #comparar el precio total de la canasta basica en una mipyme con el salario promedio de un trabajador
-    #incluso ver el tipo de trabajo del individuo y comparar el salario total de un pesquero por ejemplo
-    #con la compra de la canasta
-    #y luego con otra profesion
-    pass
+def salario(diccionario_salario,dicc_canasta):
+    actividades = []
+    salarios_promedio = []
+    precio_canasta = precio_canasta_basica(dicc_canasta)
+    for key,value in diccionario_salario.items():
+        actividades.append(key)
+        salarios_promedio.append(value)
+    # Calcular cuántas canastas se pueden comprar con cada salario
+    canastas_por_salario = [salario / precio_canasta for salario in salarios_promedio]
+
+    # Crear índices para las posiciones de las barras
+    num_actividades = len(actividades)
+    indices = list(range(num_actividades))
+    ancho_barra = 0.35
+
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 6))
+
+    # Gráfico 1: Comparación directa salario vs canasta
+    for i in indices:
+        ax1.bar(i - ancho_barra/2, salarios_promedio[i], ancho_barra, color='blue', alpha=0.7)
+        ax1.bar(i + ancho_barra/2, precio_canasta, ancho_barra, color='red', alpha=0.7)
+
+    # Solo agregar las etiquetas una vez
+    ax1.bar(0, 0, color='blue', label='Salario mensual', alpha=0.7)
+    ax1.bar(0, 0, color='red', label='Canasta básica', alpha=0.7)
+
+    ax1.set_xlabel('Actividad Económica')
+    ax1.set_ylabel('Monto ($)')
+    ax1.set_title('Salario vs Precio Canasta Básica')
+    ax1.set_xticks(indices)
+    ax1.set_xticklabels(actividades, rotation=45)
+    ax1.legend()
+    ax1.grid(True, alpha=0.3)
+
+    # Gráfico 2: Cuántas canastas se pueden comprar
+    for i in indices:
+        color = 'green' if canastas_por_salario[i] >= 1 else 'orange'
+        ax2.bar(i, canastas_por_salario[i], color=color, alpha=0.7)
+
+    ax2.axhline(y=1, color='r', linestyle='--', label='Límite 1 canasta')
+    ax2.set_xlabel('Actividad Económica')
+    ax2.set_ylabel('Número de canastas')
+    ax2.set_title('Canastas Básicas que se pueden comprar')
+    ax2.set_xticks(indices)
+    ax2.set_xticklabels(actividades, rotation=45)
+    ax2.legend()
+    ax2.grid(True, alpha=0.3)
+
+    plt.tight_layout()
+    plt.show()
+
+def salario_porcentaje(diccionario_salario,dicc_canasta):
+    actividades = []
+    salarios_promedio = []
+    precio_canasta = precio_canasta_basica(dicc_canasta)
+    for key,value in diccionario_salario.items():
+        actividades.append(key)
+        salarios_promedio.append(value)         
+    porcentaje_gasto = [(precio_canasta / salario) * 100 for salario in salarios_promedio]
+    restante = [100 - p for p in porcentaje_gasto]
+
+    fig, ax = plt.subplots(figsize=(10, 6))
+
+    # Crear barras apiladas manualmente
+    for i, actividad in enumerate(actividades):
+        ax.bar(actividad, porcentaje_gasto[i], label='% para canasta' if i == 0 else "", 
+            color='orange', alpha=0.7)
+        ax.bar(actividad, restante[i], bottom=porcentaje_gasto[i], 
+            label='% restante' if i == 0 else "", color='lightblue', alpha=0.7)
+
+    ax.set_ylabel('Porcentaje del salario (%)')
+    ax.set_title('Proporción del salario destinada a la canasta básica')
+    ax.legend()
+    ax.grid(True, alpha=0.3, axis='y')
+    plt.xticks(rotation=45)
+    plt.tight_layout()
+    plt.show()    
+
+def graf_lineas (diccionario_salario,dicc_canasta):
+    actividades = []
+    salarios_promedio = []
+    precio_canasta = precio_canasta_basica(dicc_canasta)
+    # Calcular cuántas canastas se pueden comprar con cada salario
+    canastas_por_salario = [salario / precio_canasta for salario in salarios_promedio]
+    for key,value in diccionario_salario.items():
+        actividades.append(key)
+        salarios_promedio.append(value) 
+    fig, ax1 = plt.subplots(figsize=(12, 6))
+
+    color1 = 'tab:blue'
+    ax1.set_xlabel('Actividad Económica')
+    ax1.set_ylabel('Salario ($)', color=color1)
+
+    # Gráfico de línea para salarios
+    ax1.plot(actividades, salarios_promedio, marker='o', color=color1, 
+            linewidth=2, label='Salario')
+    ax1.tick_params(axis='y', labelcolor=color1)
+
+    # Segunda escala para la relación salario/canasta
+    ax2 = ax1.twinx()
+    color2 = 'tab:red'
+    ax2.set_ylabel('Canastas que se pueden comprar', color=color2)
+    ax2.plot(actividades, canastas_por_salario, marker='s', color=color2, 
+            linestyle='--', linewidth=2, label='Canastas/salario')
+    ax2.axhline(y=1, color='gray', linestyle=':', alpha=0.7, label='Línea de 1 canasta')
+    ax2.tick_params(axis='y', labelcolor=color2)
+
+    fig.tight_layout()
+    plt.title('Salario y poder adquisitivo por actividad económica')
+    plt.grid(True, alpha=0.3)
+    plt.show()   
