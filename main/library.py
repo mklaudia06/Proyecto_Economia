@@ -244,11 +244,12 @@ def porciento_marcas_productos(diccionario):
         nombre = producto['name'].lower()  
         for basico in products_basic:
             if basico in nombre:
-                if producto['nacional']: 
-                    conteo_productos[basico]['nacional'] += 1
-                else:  
-                    conteo_productos[basico]['internacional'] += 1
-                break  
+                if producto['nacional'] is not None:
+                    if producto['nacional']: 
+                        conteo_productos[basico]['nacional'] += 1
+                    else:  
+                        conteo_productos[basico]['internacional'] += 1
+                    break  
     
     productos_nombres = [p.capitalize() for p in products_basic]
     nacionales_counts = []
