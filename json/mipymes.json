@@ -782,10 +782,10 @@
             },
             {
                 "name": "Café con Leche",
-                "unity": "lt",
+                "weight_kg": "lt",
                 "count": 1.0,
                 "brand": "Puleva",
-                "origin": "ES",
+                "nacional": "ES",
                 "records": [
                     {
                         "date": "02-11-2025",
@@ -911,7 +911,7 @@
             },
             {
                 "name": "Aceite de Oliva",
-                "unity": "lt",
+                "weight_kg": "lt",
                 "weight_lt": 1.0,
                 "brand": "Vima",
                 "nacional": false
@@ -925,7 +925,7 @@
             },
             {
                 "name": "Sal Marina",
-                "unity": "lt",
+                "weight_kg": "lt",
                 "weight_lt": 1.0,
                 "brand": "Convirán",
                 "nacional": false
@@ -1012,7 +1012,7 @@
                 "price": 110.0,
                 "weight_kg": null,
                 "brand": null,
-                "origin": null
+                "nacional": null
             },
             {
                 "name": "Pechuga de Pollo",
@@ -1149,7 +1149,7 @@
             },
             {
                 "name": "Leche Entera",
-                "unity": "lt",
+                "weight_kg": "lt",
                 "weight_lt": 1.0,
                 "brand": "Cremor",
                 "nacional": false
@@ -1344,7 +1344,7 @@
                 "price": 610.0,
                 "weight_kg": 0.400,
                 "brand": null,
-                "origin": null
+                "nacional": null
             },
             {
                 "name": "Leche Entera",
@@ -1368,5 +1368,665 @@
                 "nacional": null
             }
         ]
+    },
+    {
+        "name": "23 y 21",
+        "town": "Plaza de la Revolución",
+        "location": {
+            "street": "C E/21 y 23",
+            "coordinates_latitude_length":[23.139893,-82.399987]
+        },
+        "products": [
+            {
+                "name": "Frijol Negros",
+                "brand": null,
+                "price": 1200,
+                "weight_kg": 1.0,
+                "nacional": null
+            },
+            {
+                "name": "Pan",
+                "brand": null,
+                "price": 180,
+                "weight_kg": null,
+                "nacional": null
+            },
+            {
+                "name": "Arroz",
+                "brand": null,
+                "price": 800,
+                "weight_kg": 1.0,
+                "nacional": null
+            },
+            {
+                "name": "Azúcar",
+                "brand": null,
+                "price": 800,
+                "weight_kg": 1.0,
+                "nacional": null
+            },
+            {
+                "name": "Café",
+                "brand": null,
+                "price": 1800,
+                "weight_kg": null,
+                "nacional": null
+            },
+            {
+                "name": "Leche",
+                "brand": null,
+                "price": 1700,
+                "weight_kg": 1.0,
+                "nacional": null
+            },
+            {
+                "name": "Aceite",
+                "brand": null,
+                "price": 1050,
+                "weight_lt": 1.0,
+                "nacional": null
+            },
+            {
+                "name": "Pechuga de Pollo",
+                "brand": null,
+                "price": 4500,
+                "weight_kg": 2.0,
+                "nacional": null
+            }
+        ]
+    },
+    {
+       "name": "1005",
+       "town": "Centro Habana",
+       "location": {
+            "street": "san Lázaro E/Soledad y Marina",
+            "coordinates_latitude_length":[23.139893,-82.399987]
+        },
+        "products": [
+            {
+                "name": "Pechuga de Pollo",
+                "brand": null,
+                "price": 1980,
+                "weight_kg": 1.0,
+                "nacional": null
+            },
+            {
+                "name": "Leche en Polvo",
+                "brand": null,
+                "price": 1650,
+                "weight_kg": 1.0 ,
+                "nacional": true
+            }
+        ] 
+    },
+    {
+       "name": "Calle 13",
+       "town": "Playa",
+       "location": {
+            "street": "13 E/182 Y 184",
+            "coordinates_latitude_length":[23.086112,-82.468054]
+    },
+        "products": [
+            {
+                "name": "Arroz",
+                "brand": null,
+                "price": 750,
+                "weight_kg": 1.0,
+                "nacional": null
+            },
+            {
+                "name": "Azúcar",
+                "brand": null,
+                "price": 650,
+                "weight_kg": 1.0,
+                "nacional": null
+            },
+            {
+                "name": "Frjol",
+                "brand": null,
+                "price": 900,
+                "weight_kg": 1.0,
+                "nacional": null
+            },
+            {
+                "name": "Aceite",
+                "brand": null,
+                "price": 990,
+                "weight_lt": 1.0,
+                "nacional": null
+            },
+            {
+                "name": "Huevo",
+                "brand": null,
+                "price": 2900,
+                "weight_kg": null,
+                "nacional": null
+            },
+            {
+                "name": "Pechuga de Pollo",
+                "brand": null,
+                "price": 4700,
+                "weight_kg": 2.0,
+                "nacional": null
+            },
+            {
+                "name": "Café",
+                "brand": null,
+                "price": 1500,
+                "weight_kg": null,
+                "nacional": null
+            },
+            {
+                "name": "Frijol Chícharo",
+                "brand": null,
+                "price": 700,
+                "weight_kg": 0.450,
+                "nacional": null
+            },
+            {
+                "name": "Malta",
+                "brand": "Perla Negra",
+                "price": 270,
+                "weight_kg": null,
+                "nacional": false
+            },
+            {
+                "name": "Malta",
+                "brand": "Guajira",
+                "price": 280,
+                "weight_kg": null,
+                "nacional": true
+            },
+            {
+                "name": "Leche en Polvo",
+                "brand": null,
+                "price": 1670,
+                "weight_kg": 1.0,
+                "nacional": null
+            }
+        ] 
+    },
+    {
+       "name": "D'Cotti",
+       "town": "Plaza de la Revolución",
+       "location": {
+            "street": "15 E/L y K",
+            "coordinates_latitude_length":[23.142964,-82.386882]
+        },
+        "products": [
+            {
+                "name": "Arroz",
+                "brand": null,
+                "price": 750,
+                "weight_kg": 1.0,
+                "nacional": null
+            },
+            {
+                "name": "Frijol Negros",
+                "brand": null,
+                "price": 810,
+                "weight_kg": 0.450,
+                "nacional": null
+            },
+            {
+                "name": "Frijol Chícharo",
+                "brand": null,
+                "price": 560,
+                "weight_kg": 0.450,
+                "nacional": null
+            },
+            {
+                "name": "Azúcar",
+                "brand": null,
+                "price": 810,
+                "weight_kg": 1.0,
+                "nacional": null
+            },
+            {
+                "name": "Aceite de Oliva",
+                "brand": null,
+                "price": 2500,
+                "weight_lt": 1.0,
+                "nacional": null
+            },
+            {
+                "name": "Malta",
+                "brand": "Perla Negra",
+                "price": 290,
+                "weight_kg": null,
+                "nacional": null
+            },
+            {
+                "name": "Pan",
+                "brand": null,
+                "price": 560,
+                "weight_kg": null,
+                "nacional": null
+            },
+            {
+                "name": "Pechuga de Pollo",
+                "brand": null,
+                "price": 6000,
+                "weight_kg": 1.0,
+                "nacional": null
+            }
+        ]  
+    },
+    {
+       "name": "DLis",
+        "town": "La Lisa",
+       "location": {
+            "street": "Avenida 251 #4405 E/44 y 46 Punta Brava",
+            "coordinates_latitude_length":[23.016479,-82.497953]
+        },
+        "products": [
+            {
+                "name": "Aceite",
+                "brand": null,
+                "price": 900,
+                "weight_lt": 1.0,
+                "nacional": null
+            },
+            {
+                "name": "Café",
+                "brand": null,
+                "price": 2000,
+                "weight_kg": null,
+                "nacional": null
+            },
+            {
+                "name": "Azúcar",
+                "brand": null,
+                "price": 700,
+                "weight_kg": 1.0,
+                "nacional": null
+            },
+            {
+                "name": "Arroz",
+                "brand": null,
+                "price": 800,
+                "weight_kg": 1.0,
+                "nacional": null
+            },
+            {
+                "name": "Hígado de Pollo",
+                "brand": null,
+                "price": 750,
+                "weight_kg": 1.0,
+                "nacional": null
+            },
+            {
+                "name": "Pollo Entero",
+                "brand": null,
+                "price": 2000,
+                "weight_kg": null,
+                "nacional": null
+            },
+            {
+                "name": "Huevo",
+                "brand": null,
+                "price": 3000,
+                "weight_kg": null,
+                "nacional": null
+            }
+        ]  
+    },
+    {
+       "name": "Gabana Bella",
+       "town": "Playa",
+       "location": {
+            "street": "13 E/182 y 184 #12208",
+            "coordinates_latitude_length":[23.086389,-82.468003]
+    },
+        "products": [
+            {
+                "name": "Arroz",
+                "brand": null,
+                "price": 900,
+                "weight_kg": 0.9,
+                "nacional": null
+            },
+            {
+                "name": "Aceite",
+                "brand": null,
+                "price": 890,
+                "weight_lt": 0.9,
+                "nacional": null
+            },
+            {
+                "name": "Pechuga de Pollo",
+                "brand": null,
+                "price": 3200,
+                "weight_kg": 1.0,
+                "nacional": null
+            },
+            {
+                "name": "Hígado de Pollo",
+                "brand": null,
+                "price": 980,
+                "weight_kg": 1.0,
+                "nacional": null
+            },
+            {
+                "name": "Azúcar",
+                "brand": null,
+                "price": 760,
+                "weight_kg": 1.0,
+                "nacional": null
+            },
+            {
+                "name": "Frijol Colorado",
+                "brand": null,
+                "price": 730,
+                "weight_kg": 0.50,
+                "nacional": null
+            },
+            {
+                "name": "Frijol Judía",
+                "brand": null,
+                "price": 900,
+                "weight_kg": 0.50,
+                "nacional": null
+            },
+            {
+                "name": "Frijol Garbanzo",
+                "brand": null,
+                "price": 920,
+                "weight_kg": 0.50,
+                "nacional": null
+            },
+            {
+                "name": "Frijo lLenteja",
+                "brand": null,
+                "price": 715,
+                "weight_kg": 0.450,
+                "nacional": null
+            }
+        ] 
+    },
+    {
+       "name": "Hurón Azul",
+       "town": "Plaza de la Revolución",
+       "location": {
+            "street": "Humboldt E/O y P",
+            "coordinates_latitude_length":[23.14127,-82.379149]
+        },
+        "products": [
+            {
+                "name": "Arroz",
+                "brand": null,
+                "price": 700,
+                "weight_kg": 1.0,
+                "nacional": null
+            },
+            {
+                "name": "Huevo",
+                "brand": null,
+                "price": 3600,
+                "weight_kg": null,
+                "nacional": null
+            },
+            {
+                "name": "Pechuga de Pollo",
+                "brand": null,
+                "price": 5400,
+                "weight_kg": 2.0,
+                "nacional": null
+            },
+            {
+                "name": "Azúcar",
+                "brand": null,
+                "price": 750,
+                "weight_kg": 1.0,
+                "nacional": null
+            },
+            {
+                "name": "FrijolNegros",
+                "brand": null,
+                "price": 1200,
+                "weight_kg": 1.0,
+                "nacional": null
+            },
+            {
+                "name": "Aceite",
+                "brand": null,
+                "price": 990,
+                "weight_lt": 1.0,
+                "nacional": null
+            },
+            {
+                "name": "Leche en Polvo",
+                "brand": null,
+                "price": 1600,
+                "weight_kg": 1.0,
+                "nacional": null
+            },
+            {
+                "name": "Café",
+                "brand": null,
+                "price": 1800,
+                "weight_kg": null,
+                "nacional": null
+            }
+        ] 
+    },
+    {
+       "name": "I y J",
+       "town": "Plaza de la Revolución",
+       "location": {
+            "street": "23 E/I y J",
+            "coordinates_latitude_length":[23.138193,-82.385524]
+        },
+        "products": [
+            {
+                "name": "Arroz",
+                "brand": null,
+                "price": 650,
+                "weight_kg": 1.0,
+                "nacional": null
+            },
+            {
+                "name": "Frijol Negros",
+                "brand": null,
+                "price": 790,
+                "weight_kg": 1.0,
+                "nacional": null
+            },
+            {
+                "name": "Leche en Polvo",
+                "brand": null,
+                "price": 1670,
+                "weight_kg": 1.0,
+                "nacional": null
+            },
+            {
+                "name": "Café",
+                "brand": null,
+                "price": 2100,
+                "weight_kg": null,
+                "nacional": null
+            },
+            {
+                "name": "Pollo",
+                "brand": null,
+                "price": 4200,
+                "weight_kg": 4.50,
+                "nacional": null
+            },
+            {
+                "name": "Huevo",
+                "brand": null,
+                "price": 3300,
+                "weight_kg": null,
+                "nacional": null
+            },
+            {
+                "name": "Aceite",
+                "brand": null,
+                "price": 950,
+                "weight_lt": 0.9,
+                "nacional": null
+            }
+        ] 
+    },
+    {
+        "name": "L y M",
+        "town": "Plaza de la Revolución",
+        "location": {
+            "street": "17 E/L y M",
+            "coordinates_latitude_length":[ 23.142525,-82.385316]
+        },
+        "products": [
+            {
+                "name": "Arroz",
+                "brand": null,
+                "price": 750,
+                "weight_kg": 1.0,
+                "nacional": null
+            },
+            {
+                "name": "Aceite",
+                "brand": null,
+                "price": 990,
+                "weight_kg": 0.9,
+                "nacional": null
+            },
+            {
+                "name": "Frijol Negros",
+                "brand": null,
+                "price": 800,
+                "weight_kg": 0.9,
+                "nacional": null
+            },
+            {
+                "name": "Frijoles Colorados",
+                "brand": null,
+                "price": 800,
+                "weight_kg": null,
+                "nacional": null
+            },
+            {
+                "name": "Azúcar",
+                "brand": null,
+                "price": 900,
+                "weight_kg": 1.0,
+                "nacional": null
+            },
+            {
+                "name": "Leche en Polvo",
+                "brand": null,
+                "price": 1000,
+                "weight_kg": 0.4,
+                "nacional": null
+            },
+            {
+                "name": "Café",
+                "brand": null,
+                "price": 1600,
+                "weight_kg": null,
+                "nacional": null
+            },
+            {
+                "name": "Malta",
+                "brand": "Perla Negra",
+                "price": 280,
+                "weight_kg": null,
+                "nacional": false
+            },
+            {
+                "name": "Huevo",
+                "brand": null,
+                "price": 3300,
+                "weight_kg": null,
+                "nacional": null
+            },
+            {
+                "name": "Pollo",
+                "brand": null,
+                "price": 4000,
+                "weight_kg": 4.50,
+                "nacional": null
+            }
+        ]
+    },
+    {
+       "name": "La Complicidad",
+       "town": "Plaza de la Revolución",
+       "location": {
+            "street": "B E/21 y 23",
+            "coordinates_latitude_length":[23.133287,-82.392971]
+    },
+        "products": [
+            {
+                "name": "Huevo",
+                "brand": null,
+                "price": 3300,
+                "weight_kg": null,
+                "nacional": null
+            },
+            {
+                "name": "Pechuga de Pollo",
+                "brand": null,
+                "price": 4700,
+                "weight_kg": 2.0,
+                "nacional": null
+            },
+            {
+                "name": "Hígado de Pollo",
+                "brand": null,
+                "price": 950,
+                "weight_kg": 1.0,
+                "nacional": null
+            },
+            {
+                "name": "Café",
+                "brand": null,
+                "price": 600,
+                "weight_kg":0.45 ,
+                "nacional": null
+            },
+            {
+                "name": "Azúcar",
+                "brand": null,
+                "price": 750,
+                "weight_kg": 1.0,
+                "nacional": null
+            },
+            {
+                "name": "Sal",
+                "brand": null,
+                "price": 700,
+                "weight_kg": 1.0,
+                "nacional": null
+            },
+            {
+                "name": "Arroz",
+                "brand": null,
+                "price": 760,
+                "weight_kg": 1.0,
+                "nacional": null
+            },
+            {
+                "name": "Aceite",
+                "brand": null,
+                "price": 1000,
+                "weight_kg": "1 l",
+                "nacional": null
+            },
+            {
+                "name": "Frijoles Negros",
+                "brand": null,
+                "price": 950,
+                "weight_kg": 1.0,
+                "nacional": null
+            },
+            {
+                "name": "Malta",
+                "brand": null,
+                "price": 260,
+                "weight_kg": null,
+                "nacional": false
+            }
+        ]  
     }
 ]
